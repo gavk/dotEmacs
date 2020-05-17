@@ -1,0 +1,5 @@
+# $Id$
+
+.gitignore	ident
+.gitattributes	ident
+*.el		ident
