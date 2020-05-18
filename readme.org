@@ -1,3 +1,7 @@
 * Репозиторий конфига Emacs
 
 После клонирования репозитория необходимо убрать файл customize.el из индекса командой git update-index --assume-unchanged customize.el.
+
+* Горячие клавиши 
+
+C-x g - magit
