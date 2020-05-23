@@ -44,6 +44,10 @@
   (setq org-log-done t)
   )
 
+;;; Подключаем gpg
+(use-package pinentry)
+(pinentry-start)
+
 
 
 ;;; Определяем место хранения специфичных настроек
