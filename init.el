@@ -53,6 +53,17 @@
 
 
 
+;;; Включаем перенос по словам
+(setq word-wrap          t)
+(global-visual-line-mode t)
+
+;;; Отключаем автосохранение
+(setq make-backup-files        nil)
+(setq auto-save-default        nil)
+(setq auto-save-list-file-name nil)
+
+
+
 ;;; Определяем место хранения специфичных настроек
 ;;; (задаются через customize)
 (setq custom-file "~/.emacs.d/customize.el")
