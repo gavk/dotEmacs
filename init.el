@@ -36,6 +36,16 @@
 
 
 
+;;; Подключаем Orgmode
+(use-package org
+  :config
+  (define-key global-map "\C-cl" 'org-store-link)
+  (define-key global-map "\C-ca" 'org-agenda)
+  (setq org-log-done t)
+  )
+
+
+
 ;;; Определяем место хранения специфичных настроек
 ;;; (задаются через customize)
 (setq custom-file "~/.emacs.d/customize.el")
