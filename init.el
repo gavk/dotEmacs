@@ -53,6 +53,21 @@
 
 
 
+;;; Подключаем  Language server
+(use-package flycheck)
+(use-package lsp-mode
+  :commands lsp)
+(use-package lsp-ui
+  :commands lsp-ui-mode)
+(use-package company-lsp
+  :commands company-lsp)
+(use-package ccls
+  :hook ((c-mode c++-mode objc-mode cuda-mode) .
+	 (lambda () (require 'ccls) (lsp))))
+(setq ccls-executable "/usr/bin/ccls")
+
+
+
 ;;; Включаем перенос по словам
 (setq word-wrap          t)
 (global-visual-line-mode t)
