@@ -67,6 +67,14 @@
 (setq ccls-executable "/usr/bin/ccls")
 
 
+;;; Подключаем управление проектами
+(use-package projectile
+  :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+
+
 
 ;;; Включаем перенос по словам
 (setq word-wrap          t)
