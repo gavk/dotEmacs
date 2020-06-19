@@ -53,6 +53,35 @@
 
 
 
+;;; Работа с redmine
+(use-package orgmine
+  :load-path
+  "repos/orgmine"
+  :config
+  (setq org-link-abbrev-alist
+	'(("dev" . "https://dev.tightvideo.com/")
+	  ))
+  (setq orgmine-servers
+	'(("dev"
+	   (host . "https://dev.tightvideo.com")
+	   (api-key . "e4f71d27f5e4030bdc35b76594a9d6f4519926fb")
+	   (issue-title-format . "[[redmine:issues/%{id}][#%{id}]] %{subject}")
+	   (journal-title-format . "[[redmine:issues/%{id}#note-%{count}][V#%{id}-%{count}]] %{created_on} %{author}")
+	   (version-title-format . "[[redmine:versions/%{id}][V#%{id}]] %{name}")
+	   (tracker-title-format . "%{name}")
+	   (project-title-format . "[[redmine:projects/%{identifier}][%{identifier}]] %{name}")
+	   (user-name-format . "%{firstname} %{lastname}")
+	   (default-todo-keyword . "NEW")))
+  )
+  (add-hook 'org-mode-hook
+	    (lambda () (if (assoc "om_project" org-file-properties)
+			   (orgmine-mode))))
+  :init
+  (use-package elmine)
+  (use-package request)
+  )
+
+
 ;;; Подключаем сниппеты
 (use-package yasnippet
   :config

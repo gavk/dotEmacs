@@ -1,0 +1,3 @@
+[submodule "repos/orgmine"]
+	path = repos/orgmine
+	url = git@github.com:kametoku/orgmine.git
