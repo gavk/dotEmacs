@@ -53,6 +53,15 @@
 
 
 
+;;; Подключаем сниппеты
+(use-package yasnippet
+  :config
+  (yas-global-mode 1)
+  )
+(use-package yasnippet-snippets)
+
+
+
 ;;; Подключаем  Language server
 (use-package flycheck)
 (use-package lsp-mode
@@ -65,6 +74,7 @@
   :hook ((c-mode c++-mode objc-mode cuda-mode) .
 	 (lambda () (require 'ccls) (lsp))))
 (setq ccls-executable "/usr/bin/ccls")
+
 
 
 ;;; Подключаем управление проектами
