@@ -42,9 +42,9 @@
   (define-key global-map "\C-cl" 'org-store-link)
   (define-key global-map "\C-ca" 'org-agenda)
   (setq org-log-done t)
-  (setq org-directory "~/workspace/org-files")
+  (setq org-directory "~/projects/org-files")
   (setq org-agenda-file-regexp "\\(?:\\.org\\|\\.org\\.gpg\\)\\'")
-  (setq org-agenda-files (list org-directory))
+  (setq org-agenda-files (directory-files org-directory 1 org-agenda-file-regexp))
   )
 
 ;;; Подключаем gpg
